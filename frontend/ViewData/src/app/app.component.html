@@ -1,0 +1,27 @@
+<div class="" style="text-align: center;font: 1.5em sans-serif;color: blue;">
+  <h1>See all data of yours</h1>
+</div>
+<div class=""style="width: 80%;">
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>EMAIL</th>
+      <th>NAME</th>
+      <th>PAGE URL</th>
+      <th>PHONE</th>
+      <th>SOCIAL LINK</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.email || '-' }}</td>
+      <td>{{ item.name || '-' }}</td>
+      <td><a [href]="item.pageUrl" target="_blank">{{ item.pageUrl }}</a></td>
+      <td>{{ item.phone || '-' }}</td>
+      <td><a [href]="item.socialLink" target="_blank">{{ item.socialLink }}</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
